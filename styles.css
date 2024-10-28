@@ -16,7 +16,7 @@
 
 .dashboard-frame {
     width: calc(50% - 10px);
-    height: 550px;
+    height: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     overflow: hidden;
