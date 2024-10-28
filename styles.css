@@ -130,10 +130,27 @@ h1 img {
     margin-top: 20px;
     border-top: 2px solid #026163;
     padding-top: 15px;
-    justify-content: center;
     white-space: nowrap;
-    animation: scroll-images 40s linear infinite;
+    animation: scroll-images 60s linear infinite linear;
 }
+
+.image-container::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.image-container::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+@keyframes scroll-images {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 
 .image-container img {
     flex-shrink: 0;
@@ -146,10 +163,7 @@ h1 img {
     display: inline-block;
 }
 
-@keyframes scroll-images {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+
 
 
 .image-container img:hover {

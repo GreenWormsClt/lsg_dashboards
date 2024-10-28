@@ -14,9 +14,21 @@ function loadImages() {
                 img.classList.add('dynamic-image');
                 imageContainer.appendChild(img);
             });
+
+            // Duplicate the images multiple times to ensure a seamless scroll
+            for (let i = 0; i < 2; i++) {  // Adjust the number of duplications for a continuous scroll
+                images.forEach(imageName => {
+                    const img = document.createElement('img');
+                    img.src = `assets/${imageName}`;
+                    img.alt = `Image ${imageName}`;
+                    img.classList.add('dynamic-image');
+                    imageContainer.appendChild(img);
+                });
+            }
         })
         .catch(error => console.error('Error loading images:', error));
 }
+
 
 // Call the loadImages function on page load
 window.addEventListener('DOMContentLoaded', loadImages);
