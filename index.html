@@ -73,10 +73,17 @@
             </div>
         </section>
 
-        <!-- Dashboards Section -->
-        <section id="dashboards" class="dashboards-section">
-            <h2 class="section-title">Performance Dashboards</h2>
-            <div class="dashboards-row">
+        <!-- Dashboard Tabs Navigation -->
+        <div class="tabs-container">
+            <button class="tab-button active" data-tab="tab-mrf">MRF Overview</button>
+            <button class="tab-button" data-tab="tab-collection">Collection Points</button>
+            <button class="tab-button" data-tab="tab-flow">Material Flow</button>
+            <button class="tab-button" data-tab="tab-additional">Additional Insights</button>
+        </div>
+
+        <!-- Dashboard Tabs Content -->
+        <div class="tab-contents">
+            <div id="tab-mrf" class="tab-content active">
                 <div class="dashboard-group">
                     <h3 class="group-title">MRF Overview</h3>
                     <div class="dashboard-wrapper">
@@ -90,7 +97,8 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div id="tab-collection" class="tab-content">
                 <div class="dashboard-group">
                     <h3 class="group-title">Collection Points</h3>
                     <div class="dashboard-wrapper">
@@ -104,7 +112,8 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div id="tab-flow" class="tab-content">
                 <div class="dashboard-group">
                     <h3 class="group-title">Material Flow</h3>
                     <div class="dashboard-wrapper">
@@ -118,7 +127,8 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div id="tab-additional" class="tab-content">
                 <div class="dashboard-group">
                     <h3 class="group-title">Additional Insights</h3>
                     <div class="dashboard-wrapper">
@@ -133,7 +143,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Images Section -->
         <section id="images" class="images-section">

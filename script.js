@@ -144,6 +144,21 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.dashboard-frame').forEach(frame => {
         if (isElementInViewport(frame)) frame.classList.add('animate');
     });
+
+    // Handle initial tab content
+    const activeTab = document.querySelector('.tab-content.active');
+    if (activeTab) {
+        activeTab.dataset.loaded = 'true';
+        console.log('Marking initial active tab as loaded: ' + activeTab.id);
+        
+        // Trigger initial resize events
+        [100, 300, 600].forEach(delay => {
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+                console.log(`Triggered initial resize event after ${delay}ms`);
+            }, delay);
+        });
+    }
 });
 
 // Utility function to check if element is in viewport
@@ -165,5 +180,66 @@ window.addEventListener('scroll', () => {
         document.querySelectorAll('.dashboard-frame').forEach(frame => {
             if (isElementInViewport(frame)) frame.classList.add('animate');
         });
+    });
+});
+
+// Tab switching functionality with conditional iframe reload and resize event
+document.querySelectorAll('.tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+        // If the clicked button is already active, do nothing
+        if (button.classList.contains('active')) {
+            console.log('Tab button already active: ' + button.getAttribute('data-tab'));
+            return;
+        }
+
+        // Remove active class from all tab buttons and tab content
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  
+        // Activate the clicked tab button
+        button.classList.add('active');
+        const targetTab = button.getAttribute('data-tab');
+        const tabContent = document.getElementById(targetTab);
+
+        if (tabContent) {
+            tabContent.classList.add('active');
+            
+            // Only force reload if this tab hasn't been loaded before
+            if (!tabContent.dataset.loaded) {
+                console.log('Initial load for tab: ' + targetTab);
+                const iframes = tabContent.querySelectorAll('iframe');
+                iframes.forEach(iframe => {
+                    if (!iframe.dataset.src) {
+                        iframe.dataset.src = iframe.getAttribute('src');
+                    }
+                    iframe.setAttribute('src', iframe.dataset.src);
+                });
+                tabContent.dataset.loaded = 'true';
+            } else {
+                console.log('Tab already loaded, triggering resize: ' + targetTab);
+            }
+
+            // Trigger resize events with increasing delays to ensure proper rendering
+            [100, 300, 600].forEach(delay => {
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                    console.log(`Triggered resize event after ${delay}ms`);
+                }, delay);
+            });
+        }
+    });
+});
+
+// Smooth Scroll for Navigation
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if(href && href.charAt(0) === '#') {
+            e.preventDefault();
+            const targetSection = document.querySelector(href);
+            if(targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } // else, do nothing and allow normal navigation
     });
 });

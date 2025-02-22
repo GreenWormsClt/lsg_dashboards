@@ -412,3 +412,31 @@ body {
     }
 }
 
+/* Tabs Navigation and Content Styles */
+.tabs-container {
+    text-align: center;
+    margin: 20px 0;
+}
+.tab-button {
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: 2px solid #026163;
+    border-radius: 5px;
+    background: transparent;
+    color: #026163;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+.tab-button.active, .tab-button:hover {
+    background: #026163;
+    color: #ffffff;
+}
+.tab-contents .tab-content {
+    display: none;
+    margin-top: 20px;
+}
+.tab-contents .tab-content.active {
+    display: block;
+}
+

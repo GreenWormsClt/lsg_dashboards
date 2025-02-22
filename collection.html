@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Points - GREEN WORMS LIVE DASHBOARD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      /* Custom Navigation Panel Styles */
+      .dashboard-nav {
+          margin: 20px 0;
+          text-align: center;
+      }
+      .dashboard-nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+      }
+      .dashboard-nav li {
+          display: inline;
+          margin-right: 20px;
+      }
+      .dashboard-nav a {
+          font-size: 1.1em;
+          text-decoration: none;
+          color: #026163;
+          padding: 10px 20px;
+          border: 2px solid #026163;
+          border-radius: 5px;
+          transition: background-color 0.3s, color 0.3s;
+      }
+      .dashboard-nav a:hover, .dashboard-nav a.active {
+          background-color: #026163;
+          color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="header-content">
+            <img src="assets/logo.jpeg" alt="Green Worms Logo">
+            <div class="header-text">
+                <h1>GREEN WORMS LIVE DASHBOARD</h1>
+                <p>Starting from July 2024</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html#scorecards">Live Data</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#images">Gallery</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+         <!-- Dashboard Navigation Panel -->
+         <nav class="dashboard-nav">
+            <ul>
+                <li><a href="mrf.html">MRF Overview</a></li>
+                <li><a href="collection.html" class="active">Collection Points</a></li>
+                <li><a href="flow.html">Material Flow</a></li>
+                <li><a href="additional.html">Additional Insights</a></li>
+            </ul>
+         </nav>
+
+         <!-- Collection Points Section -->
+         <section class="dashboards-section">
+             <h2 class="section-title">Collection Points</h2>
+             <div class="dashboard-group">
+                 <div class="dashboard-wrapper">
+                     <div class="dashboard-frame">
+                         <h4>GREEN WORMS LSG COLLECTION POINTS</h4>
+                         <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_pp313wldld?rm=minimal" allowfullscreen></iframe>
+                     </div>
+                     <div class="dashboard-frame">
+                         <h4>GREEN WORMS COLLECTION POINTS MAP</h4>
+                         <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_lgo3pzncmd?rm=minimal" allowfullscreen></iframe>
+                     </div>
+                 </div>
+             </div>
+         </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
