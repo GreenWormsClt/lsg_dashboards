@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GREEN WORMS LIVE DASHBOARD</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         .dashboard-frame {
             transition: transform 0.3s ease-in-out;
@@ -16,108 +17,131 @@
     </style>
 </head>
 <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="header-content">
+            <img src="assets/logo.jpeg" alt="Green Worms Logo">
+            <div class="header-text">
+                <h1>GREEN WORMS LIVE DASHBOARD</h1>
+                <p>Starting from July 2024</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="#scorecards">Live Data</a>
+            <a href="#dashboards">Dashboards</a>
+            <a href="#images">Gallery</a>
+        </nav>
+    </header>
 
-    <h1>
-        <img src="assets/logo.jpeg" alt="Green Worms Logo">
-        GREEN WORMS LIVE DASHBOARD
-    </h1>
-    <p style="font-size: 20px; font-weight: normal; padding-left: 1em;">Starting from July 2024</p>
+    <main class="main-content">
+        <!-- Scorecards Section -->
+        <section id="scorecards" class="scorecards-section">
+            <h2 class="section-title">Live Data Overview</h2>
+            <div class="scorecards-row">
+                <div class="stage" data-tooltip="Total waste collected in tons">
+                    <h3><i class="material-icons">local_shipping</i> Procured Volume</h3>
+                    <div class="progress">
+                        <div class="progress-bar" id="procurement-progress"></div>
+                        <div class="material-flow" id="procurement-flow"></div>
+                    </div>
+                    <p class="highlighted-number" id="procurement-volume">Loading...</p>
+                </div>
+                <div class="stage" data-tooltip="Total waste processed at MRF in tons">
+                    <h3><i class="material-icons">factory</i> Processed Volume</h3>
+                    <div class="progress">
+                        <div class="progress-bar" id="processing-progress"></div>
+                        <div class="material-flow" id="processing-flow"></div>
+                    </div>
+                    <p class="highlighted-number" id="processing-volume">Loading...</p>
+                </div>
+                <div class="stage" data-tooltip="Total waste dispatched for recycling in tons">
+                    <h3><i class="material-icons">recycling</i> Dispatched for Recycling</h3>
+                    <div class="progress">
+                        <div class="progress-bar" id="recycler-progress"></div>
+                        <div class="material-flow" id="recycler-flow"></div>
+                    </div>
+                    <p class="highlighted-number" id="recycler-volume">Loading...</p>
+                </div>
+                <div class="stage" data-tooltip="Total waste dispatched for co-processing in tons">
+                    <h3><i class="material-icons">fireplace</i> Dispatched for Coprocessing</h3>
+                    <div class="progress">
+                        <div class="progress-bar" id="kiln-progress"></div>
+                        <div class="material-flow" id="kiln-flow"></div>
+                    </div>
+                    <p class="highlighted-number" id="kiln-volume">Loading...</p>
+                </div>
+            </div>
+        </section>
 
-<!-- Live Data Dashboard Row (Scorecards) -->
-<div class="scorecards-row">
-    <!-- Procurement Stage -->
-    <div class="stage">
-        <h2>Procured Volume</h2>
-        <div class="progress">
-            <div class="progress-bar" id="procurement-progress"></div>
-            <div class="material-flow" id="procurement-flow"></div>
-        </div>
-        <p class="highlighted-number" id="procurement-volume">Loading...</p>
-    </div>
+        <!-- Dashboards Section -->
+        <section id="dashboards" class="dashboards-section">
+            <h2 class="section-title">Performance Dashboards</h2>
+            <div class="dashboards-row">
+                <div class="dashboard-group">
+                    <h3 class="group-title">MRF Overview</h3>
+                    <div class="dashboard-wrapper">
+                        <div class="dashboard-frame">
+                            <h4>GREEN WORMS MRFS</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_zapoa0p0cd?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                        <div class="dashboard-frame">
+                            <h4>GREEN WORMS MRF LOCATIONS</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_kjpdxmrcmd?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Processing at MRF Stage -->
-    <div class="stage">
-        <h2>Processed Volume</h2>
-        <div class="progress">
-            <div class="progress-bar" id="processing-progress"></div>
-            <div class="material-flow" id="processing-flow"></div>
-        </div>
-        <p class="highlighted-number" id="processing-volume">Loading...</p>
-    </div>
+                <div class="dashboard-group">
+                    <h3 class="group-title">Collection Points</h3>
+                    <div class="dashboard-wrapper">
+                        <div class="dashboard-frame">
+                            <h4>GREEN WORMS LSG COLLECTION POINTS</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_pp313wldld?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                        <div class="dashboard-frame">
+                            <h4>GREEN WORMS COLLECTION POINTS MAP</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_lgo3pzncmd?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Recycler Stage -->
-    <div class="stage">
-        <h2>Dispatched for Recycling</h2>
-        <div class="progress">
-            <div class="progress-bar" id="recycler-progress"></div>
-            <div class="material-flow" id="recycler-flow"></div>
-        </div>
-        <p class="highlighted-number" id="recycler-volume">Loading...</p>
-    </div>
+                <div class="dashboard-group">
+                    <h3 class="group-title">Material Flow</h3>
+                    <div class="dashboard-wrapper">
+                        <div class="dashboard-frame">
+                            <h4>MRF INWARD AND OUTWARD FLOW</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_e8y3a2nemd?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                        <div class="dashboard-frame">
+                            <h4>FINAL DISPATCH LOCATIONS MAP</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_hz73q2weld?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Cement Kiln Stage -->
-    <div class="stage">
-        <h2>Dispatched for Coprocessing</h2>
-        <div class="progress">
-            <div class="progress-bar" id="kiln-progress"></div>
-            <div class="material-flow" id="kiln-flow"></div>
-        </div>
-        <p class="highlighted-number" id="kiln-volume">Loading...</p>
-    </div>
-</div>
+                <div class="dashboard-group">
+                    <h3 class="group-title">Additional Insights</h3>
+                    <div class="dashboard-wrapper">
+                        <div class="dashboard-frame">
+                            <h4>MATERIALS COMPOSITIONS</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_t3206wldld?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                        <div class="dashboard-frame">
+                            <h4>GREEN WORMS TEAM OVERVIEW</h4>
+                            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_qvru7bqdld?rm=minimal" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Image Container for Additional Images -->
-<div class="image-container">
-</div>
+        <!-- Images Section -->
+        <section id="images" class="images-section">
+            <h2 class="section-title">Gallery</h2>
+            <div class="image-container"></div>
+        </section>
+    </main>
 
-<div class="dashboards-row">
-    <!-- Wrapper for two dashboards per row -->
-<!--MRF and MRF Map-->
-    <div class="dashboard-wrapper">
-        <div class="dashboard-frame">
-          <h2 style="text-align: center; width: 100%;">GREEN WORMS MRFS</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_zapoa0p0cd?rm=minimal" allowfullscreen></iframe>
-        </div>
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">GREEN WORMS MRF LOCATIONS</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_kjpdxmrcmd?rm=minimal" allowfullscreen></iframe>
-        </div>
-    </div>
-    <!--Collection Points and Maps-->
-    <div class="dashboard-wrapper">
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">GREEN WORMS LSG COLLECTION POINTS</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_pp313wldld?rm=minimal" allowfullscreen></iframe>
-        </div>
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">GREEN WORMS COLLECTION POINTS MAP</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_lgo3pzncmd?rm=minimal" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="dashboard-wrapper">
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">MRF INWARD AND OUTWARD FLOW</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_e8y3a2nemd?rm=minimal" allowfullscreen></iframe>
-        </div>
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">FINAL DISPATCH LOCATIONS MAP</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_hz73q2weld?rm=minimal" allowfullscreen></iframe>
-        </div>
-        
-    </div>
-    <div class="dashboard-wrapper">
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">MATERIALS COMPOSITIONS</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_t3206wldld?rm=minimal" allowfullscreen></iframe>
-        </div>
-        <div class="dashboard-frame">
-            <h2 style="text-align: center; width: 100%;">GREEN WORMS TEAM OVERVIEW</h2>
-            <iframe src="https://lookerstudio.google.com/embed/reporting/1028b320-c432-4f43-90e0-88e0630fd552/page/p_qvru7bqdld?rm=minimal" allowfullscreen></iframe>
-        </div>
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
